@@ -87,8 +87,8 @@ export const vehicles: Vehicle[] = [
     {
         name: "Nissan Micra",
         location: "Bois-Colombes",
-        image: "/images/fleet/micra-bois-colombes.png",
-        images: ["/images/fleet/micra-bois-colombes.png"],
+        image: "/images/fleet/micra-1.jpg",
+        images: ["/images/fleet/micra-1.jpg", "/images/fleet/micra-2.jpg", "/images/fleet/micra-3.jpg"],
         volume: "Citadine",
         fuel: "Essence",
         transmission: "Automatique",
