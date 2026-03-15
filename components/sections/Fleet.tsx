@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button"
 import { ArrowRight, Fuel, Settings, MapPin, ChevronRight, Search } from "lucide-react"
 import Image from "next/image"
 import { SectionInView } from "@/components/ui/SectionInView"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { cn } from "@/lib/utils"
 import { vehicles, Vehicle } from "@/lib/data/vehicles"
 import { VehicleModal } from "@/components/ui/VehicleModal"
@@ -19,17 +19,27 @@ const ITEMS_PER_PAGE = 6
 
 export function Fleet() {
     const [selectedCategory, setSelectedCategory] = useState("all")
+    const [selectedLocation, setSelectedLocation] = useState("all")
     const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
 
-    const filteredVehicles = vehicles.filter(
-        (vehicle) => selectedCategory === "all" || vehicle.category === selectedCategory
-    )
+    // Extract unique locations dynamically from vehicles data
+    const locations = useMemo(() => {
+        const uniqueLocations = Array.from(new Set(vehicles.map(v => v.location)))
+        return [{ id: "all", label: "Toutes les villes" }, ...uniqueLocations.map(loc => ({ id: loc, label: loc }))]
+    }, [])
 
+    const filteredVehicles = vehicles.filter((vehicle) => {
+        const matchCategory = selectedCategory === "all" || vehicle.category === selectedCategory
+        const matchLocation = selectedLocation === "all" || vehicle.location === selectedLocation
+        return matchCategory && matchLocation
+    })
+
+    // Reset pagination when any filter changes
     useEffect(() => {
         setVisibleCount(ITEMS_PER_PAGE)
-    }, [selectedCategory])
+    }, [selectedCategory, selectedLocation])
 
     const displayedVehicles = filteredVehicles.slice(0, visibleCount)
 
@@ -54,22 +64,44 @@ export function Fleet() {
                         </p>
                     </div>
 
-                    {/* Filter Buttons */}
-                    <div className="flex justify-center flex-wrap gap-4 mb-12">
-                        {categories.map((category) => (
-                            <button
-                                key={category.id}
-                                onClick={() => setSelectedCategory(category.id)}
-                                className={cn(
-                                    "px-6 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105 active:scale-95",
-                                    selectedCategory === category.id
-                                        ? "bg-[var(--color-primary)] text-white shadow-md"
-                                        : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-                                )}
-                            >
-                                {category.label}
-                            </button>
-                        ))}
+                    {/* Filters Container */}
+                    <div className="flex flex-col items-center gap-6 mb-12">
+                        {/* Category Filter */}
+                        <div className="flex justify-center flex-wrap gap-3">
+                            {categories.map((category) => (
+                                <button
+                                    key={category.id}
+                                    onClick={() => setSelectedCategory(category.id)}
+                                    className={cn(
+                                        "px-6 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105 active:scale-95",
+                                        selectedCategory === category.id
+                                            ? "bg-[var(--color-primary)] text-white shadow-md"
+                                            : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                                    )}
+                                >
+                                    {category.label}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Location Filter */}
+                        <div className="flex justify-center flex-wrap gap-2">
+                            {locations.map((location) => (
+                                <button
+                                    key={location.id}
+                                    onClick={() => setSelectedLocation(location.id)}
+                                    className={cn(
+                                        "px-4 py-1.5 rounded-full text-xs font-medium transition-all transform hover:scale-105 active:scale-95 flex items-center gap-1.5",
+                                        selectedLocation === location.id
+                                            ? "bg-[var(--color-secondary)] text-white shadow-md"
+                                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                    )}
+                                >
+                                    {location.id !== "all" && <MapPin className="w-3 h-3" />}
+                                    {location.label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="relative max-w-7xl mx-auto">
@@ -172,7 +204,7 @@ export function Fleet() {
 
                     {filteredVehicles.length === 0 && (
                         <div className="text-center text-gray-500 py-12">
-                            Aucun véhicule disponible dans cette catégorie pour le moment.
+                            Aucun véhicule disponible pour ces critères de recherche.
                         </div>
                     )}
                 </SectionInView>
