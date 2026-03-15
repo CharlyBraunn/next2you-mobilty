@@ -59,8 +59,8 @@ export const vehicles: Vehicle[] = [
     {
         name: "Renault Kangoo Express",
         location: "Courbevoie",
-        image: "/images/fleet/kangoo-courbevoie-1.jpg",
-        images: ["/images/fleet/kangoo-courbevoie-1.jpg", "/images/fleet/kangoo-courbevoie-2.jpg", "/images/fleet/kangoo-courbevoie-3.jpg"],
+        image: "/images/fleet/kangoo-courbevoie-2.jpg",
+        images: ["/images/fleet/kangoo-courbevoie-2.jpg", "/images/fleet/kangoo-courbevoie-1.jpg", "/images/fleet/kangoo-courbevoie-3.jpg"],
         volume: "3m³",
         fuel: "Diesel",
         transmission: "Manuelle",
