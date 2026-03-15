@@ -72,16 +72,16 @@ export const vehicles: Vehicle[] = [
     },
     {
         name: "Renault Trafic",
-        location: "Clichy", // I will put Clichy by default, or "Île-de-France"
+        location: "Bois-Colombes",
         image: "/images/fleet/trafic-6m3-1.jpg",
         images: ["/images/fleet/trafic-6m3-1.jpg", "/images/fleet/trafic-6m3-2.jpg", "/images/fleet/trafic-6m3-3.jpg", "/images/fleet/trafic-6m3-4.jpg"],
         volume: "6m³",
         fuel: "Diesel",
         transmission: "Manuelle",
         description: "Utilitaire de 6m³ spacieux et confortable, idéal pour les déménagements moyens.",
-        details: "Ce Renault Trafic de 6m³ offre un grand espace de chargement tout en restant très agréable à conduire. Parfait pour vos déménagements ou le grand transport de matériel.",
+        details: "Ce Renault Trafic de 6m³ est situé à Bois-Colombes. Il offre un grand espace de chargement tout en restant très agréable à conduire. Parfait pour vos déménagements.",
         features: ["Radar de recul", "Climatisation", "Bluetooth"],
-        link: "https://fr.getaround.com/location-voiture/clichy/renault-trafic-1234568", // placeholder
+        link: "https://fr.getaround.com/location-voiture/bois-colombes/renault-trafic-1234568",
         category: "utilitaire",
     },
     {
