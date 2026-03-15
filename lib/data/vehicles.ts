@@ -73,8 +73,8 @@ export const vehicles: Vehicle[] = [
     {
         name: "Renault Twingo III",
         location: "Bois-Colombes",
-        image: "/images/fleet/twingo-bois-colombes.png",
-        images: ["/images/fleet/twingo-bois-colombes.png"],
+        image: "/images/fleet/twingo-1.jpg",
+        images: ["/images/fleet/twingo-1.jpg", "/images/fleet/twingo-2.jpg", "/images/fleet/twingo-3.jpg"],
         volume: "Citadine",
         fuel: "Essence",
         transmission: "Manuelle",
