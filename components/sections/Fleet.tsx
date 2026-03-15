@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/Button"
-import { ArrowRight, Fuel, Settings, MapPin, ChevronLeft, ChevronRight, Search } from "lucide-react"
+import { ArrowRight, Fuel, Settings, MapPin, ChevronRight, Search } from "lucide-react"
 import Image from "next/image"
 import { SectionInView } from "@/components/ui/SectionInView"
 import { useState, useEffect } from "react"
@@ -21,22 +21,17 @@ export function Fleet() {
     const [selectedCategory, setSelectedCategory] = useState("all")
     const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [currentPage, setCurrentPage] = useState(1)
+    const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
 
     const filteredVehicles = vehicles.filter(
         (vehicle) => selectedCategory === "all" || vehicle.category === selectedCategory
     )
 
-    const totalPages = Math.ceil(filteredVehicles.length / ITEMS_PER_PAGE)
-
     useEffect(() => {
-        setCurrentPage(1)
+        setVisibleCount(ITEMS_PER_PAGE)
     }, [selectedCategory])
 
-    const paginatedVehicles = filteredVehicles.slice(
-        (currentPage - 1) * ITEMS_PER_PAGE,
-        currentPage * ITEMS_PER_PAGE
-    )
+    const displayedVehicles = filteredVehicles.slice(0, visibleCount)
 
     const openDetails = (vehicle: Vehicle) => {
         setSelectedVehicle(vehicle)
@@ -79,7 +74,7 @@ export function Fleet() {
 
                     <div className="relative max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {paginatedVehicles.map((vehicle, index) => (
+                            {displayedVehicles.map((vehicle, index) => (
                                 <div
                                     key={index}
                                     onClick={() => openDetails(vehicle)}
@@ -161,32 +156,16 @@ export function Fleet() {
                             ))}
                         </div>
 
-                        {/* Pagination UI */}
-                        {totalPages > 1 && (
-                            <div className="flex justify-center items-center gap-4 mt-12">
-                                <button
-                                    onClick={() => {
-                                        setCurrentPage(p => Math.max(1, p - 1))
-                                        document.getElementById('flotte')?.scrollIntoView({ behavior: 'smooth' })
-                                    }}
-                                    disabled={currentPage === 1}
-                                    className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-800 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed"
+                        {/* Show More UI */}
+                        {visibleCount < filteredVehicles.length && (
+                            <div className="flex justify-center mt-12">
+                                <Button
+                                    variant="outline"
+                                    onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)}
+                                    className="px-8 py-6 rounded-full font-medium shadow-sm hover:shadow-md transition-all text-sm group"
                                 >
-                                    <ChevronLeft className="w-5 h-5" />
-                                </button>
-                                <span className="text-sm font-medium text-gray-600">
-                                    Page {currentPage} sur {totalPages}
-                                </span>
-                                <button
-                                    onClick={() => {
-                                        setCurrentPage(p => Math.min(totalPages, p + 1))
-                                        document.getElementById('flotte')?.scrollIntoView({ behavior: 'smooth' })
-                                    }}
-                                    disabled={currentPage === totalPages}
-                                    className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-800 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    <ChevronRight className="w-5 h-5" />
-                                </button>
+                                    Afficher plus <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </Button>
                             </div>
                         )}
                     </div>
