@@ -45,8 +45,8 @@ export const vehicles: Vehicle[] = [
     {
         name: "Renault Kangoo Express",
         location: "Bois-Colombes",
-        image: "/images/fleet/kangoo-bois-colombes.png",
-        images: ["/images/fleet/kangoo-bois-colombes.png"],
+        image: "/images/fleet/kangoo-blanc-1.jpg",
+        images: ["/images/fleet/kangoo-blanc-1.jpg", "/images/fleet/kangoo-blanc-2.jpg", "/images/fleet/kangoo-blanc-3.jpg"],
         volume: "3m³",
         fuel: "Diesel",
         transmission: "Manuelle",
