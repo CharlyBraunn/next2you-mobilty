@@ -5,7 +5,9 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/Button"
 import { Vehicle } from "@/lib/data/vehicles"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import React from "react"
+import useEmblaCarousel from "embla-carousel-react"
 
 interface VehicleModalProps {
     vehicle: Vehicle | null
@@ -14,17 +16,55 @@ interface VehicleModalProps {
 }
 
 export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
+    const hasMultipleImages = vehicle?.images && vehicle.images.length > 1
+    const images = hasMultipleImages ? vehicle.images! : (vehicle?.image ? [vehicle.image] : [])
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+    useEffect(() => {
+        if (!emblaApi) return
+
+        const onSelect = () => {
+            setCurrentImageIndex(emblaApi.selectedScrollSnap())
+        }
+
+        emblaApi.on("select", onSelect)
+        onSelect()
+
+        return () => {
+            emblaApi.off("select", onSelect)
+        }
+    }, [emblaApi])
+
+    const scrollPrev = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        if (emblaApi) emblaApi.scrollPrev()
+    }
+
+    const scrollNext = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        if (emblaApi) emblaApi.scrollNext()
+    }
+
+    const scrollTo = (index: number, e: React.MouseEvent) => {
+        e.stopPropagation()
+        if (emblaApi) emblaApi.scrollTo(index)
+    }
+
     // Prevent scrolling when modal is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden"
+            // Reset image index when modal opens
+            setCurrentImageIndex(0)
+            if (emblaApi) emblaApi.scrollTo(0, true)
         } else {
             document.body.style.overflow = "unset"
         }
         return () => {
             document.body.style.overflow = "unset"
         }
-    }, [isOpen])
+    }, [isOpen, emblaApi])
 
     if (!vehicle) return null
 
@@ -59,14 +99,60 @@ export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
                             </svg>
                         </button>
 
-                        {/* Image Section */}
-                        <div className="md:w-1/2 relative bg-gray-100 min-h-[300px] md:min-h-0">
-                            <Image
-                                src={vehicle.image}
-                                alt={vehicle.name}
-                                fill
-                                className="object-cover"
-                            />
+                        {/* Slider Section */}
+                        <div className="md:w-1/2 relative bg-gray-100 min-h-[300px] md:min-h-0 group overflow-hidden">
+                            <div className="h-full w-full relative" ref={hasMultipleImages ? emblaRef : null}>
+                                <div className="flex h-full w-full">
+                                    {images.map((imgSrc, index) => (
+                                        <div className="relative min-w-full h-full flex-[0_0_100%]" key={index}>
+                                            <Image
+                                                src={imgSrc}
+                                                alt={`${vehicle.name} - Vue ${index + 1}`}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {hasMultipleImages && (
+                                    <>
+                                        {/* Navigation Arrows */}
+                                        <button
+                                            onClick={scrollPrev}
+                                            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 text-gray-800 shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white focus:outline-none z-10"
+                                            aria-label="Image précédente"
+                                        >
+                                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            onClick={scrollNext}
+                                            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 text-gray-800 shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white focus:outline-none z-10"
+                                            aria-label="Image suivante"
+                                        >
+                                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </button>
+
+                                        {/* Dots Indicators */}
+                                        <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-1.5 z-10">
+                                            {images.map((_, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={(e) => scrollTo(idx, e)}
+                                                    className={`h-2 rounded-full transition-all ${idx === currentImageIndex ? "w-4 bg-[var(--color-primary)]" : "w-2 bg-white/60 hover:bg-white"
+                                                        }`}
+                                                    aria-label={`Aller à l'image ${idx + 1}`}
+                                                />
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+
                             <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-sm font-bold text-[var(--color-secondary)] backdrop-blur-sm shadow-sm">
                                 {vehicle.volume}
                             </div>
