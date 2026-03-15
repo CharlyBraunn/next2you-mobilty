@@ -140,7 +140,7 @@ export function Fleet() {
 
                                                 <div className="flex flex-wrap gap-2 mb-6">
                                                     {vehicle.features.slice(0, 3).map((feature, i) => (
-                                                        <span key={i} className="inline-flex items-center rounded-md bg-blue-50 px-2.3 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                        <span key={i} className="inline-flex items-center rounded-md bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
                                                             {feature}
                                                         </span>
                                                     ))}
