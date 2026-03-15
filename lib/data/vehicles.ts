@@ -71,6 +71,20 @@ export const vehicles: Vehicle[] = [
         category: "utilitaire",
     },
     {
+        name: "Renault Trafic",
+        location: "Clichy", // I will put Clichy by default, or "Île-de-France"
+        image: "/images/fleet/trafic-6m3-1.jpg",
+        images: ["/images/fleet/trafic-6m3-1.jpg", "/images/fleet/trafic-6m3-2.jpg", "/images/fleet/trafic-6m3-3.jpg", "/images/fleet/trafic-6m3-4.jpg"],
+        volume: "6m³",
+        fuel: "Diesel",
+        transmission: "Manuelle",
+        description: "Utilitaire de 6m³ spacieux et confortable, idéal pour les déménagements moyens.",
+        details: "Ce Renault Trafic de 6m³ offre un grand espace de chargement tout en restant très agréable à conduire. Parfait pour vos déménagements ou le grand transport de matériel.",
+        features: ["Radar de recul", "Climatisation", "Bluetooth"],
+        link: "https://fr.getaround.com/location-voiture/clichy/renault-trafic-1234568", // placeholder
+        category: "utilitaire",
+    },
+    {
         name: "Renault Twingo III",
         location: "Bois-Colombes",
         image: "/images/fleet/twingo-1.jpg",
