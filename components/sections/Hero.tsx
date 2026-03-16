@@ -71,10 +71,12 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col gap-4 sm:flex-row justify-center">
-                        <Button size="lg" className="rounded-full bg-white text-[var(--color-primary)] hover:bg-gray-100" asChild>
-                            <a href="https://fr.getaround.com/users/3551826" target="_blank" rel="noopener noreferrer">
-                                Voir les véhicules <ArrowRight className="ml-2 h-4 w-4" />
-                            </a>
+                        <Button 
+                            size="lg" 
+                            className="rounded-full bg-white text-[var(--color-primary)] hover:bg-gray-100"
+                            onClick={(e) => handleSmoothScroll(e, "flotte")}
+                        >
+                            Voir les véhicules <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                         <Button
                             variant="outline"
