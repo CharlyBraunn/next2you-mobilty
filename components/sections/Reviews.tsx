@@ -1,9 +1,16 @@
+"use client"
+
 import { Star } from "lucide-react"
+import { useState } from "react"
 import Image from "next/image"
 import { SectionInView } from "@/components/ui/SectionInView"
 import { reviews } from "@/lib/data/reviews"
 
 export function Reviews() {
+    const [visibleCount, setVisibleCount] = useState(3)
+    const displayedReviews = reviews.slice(0, visibleCount)
+    const hasMore = visibleCount < reviews.length
+
     return (
         <section id="avis" className="py-24 bg-gray-50 scroll-mt-28">
             <div className="container mx-auto px-4">
@@ -39,9 +46,9 @@ export function Reviews() {
                         </h2>
                     </div>
 
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {reviews.map((review, index) => (
-                            <div key={index} className="flex flex-col justify-between rounded-2xl bg-white p-8 shadow-sm border border-gray-100 transition-all hover:shadow-md">
+                    <div className="grid gap-8 md:grid-cols-3 mb-12">
+                        {displayedReviews.map((review, index) => (
+                            <div key={index} className="flex flex-col justify-between rounded-2xl bg-white p-8 shadow-sm border border-gray-100 transition-all hover:shadow-md animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                                 <div className="mb-6">
                                     <div className="flex gap-1 mb-4">
                                         {Array.from({ length: 5 }).map((_, i) => (
@@ -75,6 +82,17 @@ export function Reviews() {
                             </div>
                         ))}
                     </div>
+
+                    {hasMore && (
+                        <div className="text-center">
+                            <button
+                                onClick={() => setVisibleCount((prev: number) => prev + 3)}
+                                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-bold text-[var(--color-primary)] shadow-sm border border-blue-100 hover:bg-blue-50 transition-all hover:shadow-md"
+                            >
+                                Afficher plus d&apos;avis
+                            </button>
+                        </div>
+                    )}
                 </SectionInView>
             </div>
         </section>
