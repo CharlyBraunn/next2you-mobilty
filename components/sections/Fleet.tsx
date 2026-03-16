@@ -23,6 +23,20 @@ export function Fleet() {
     const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
+    const [isMobile, setIsMobile] = useState(false)
+
+    // Detect mobile and set initial visible count
+    useEffect(() => {
+        const checkMobile = () => {
+            const mobile = window.innerWidth < 768
+            setIsMobile(mobile)
+            setVisibleCount(mobile ? 3 : ITEMS_PER_PAGE)
+        }
+        
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
 
     // Extract unique locations dynamically from vehicles data
     const locations = useMemo(() => {
@@ -38,8 +52,8 @@ export function Fleet() {
 
     // Reset pagination when any filter changes
     useEffect(() => {
-        setVisibleCount(ITEMS_PER_PAGE)
-    }, [selectedCategory, selectedLocation])
+        setVisibleCount(isMobile ? 3 : ITEMS_PER_PAGE)
+    }, [selectedCategory, selectedLocation, isMobile])
 
     const displayedVehicles = filteredVehicles.slice(0, visibleCount)
 
