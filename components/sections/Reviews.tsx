@@ -68,15 +68,6 @@ export function Reviews() {
                                 </div>
 
                                 <div className="flex items-center gap-4">
-                                    <div className="relative h-12 w-12 rounded-full overflow-hidden border border-gray-100">
-                                        <Image
-                                            src={review.avatar}
-                                            alt={review.name}
-                                            fill
-                                            className="object-cover"
-                                            sizes="48px"
-                                        />
-                                    </div>
                                     <div>
                                         <p className="font-bold text-[var(--color-secondary)]">{review.name}</p>
                                         <p className="text-xs text-gray-500">{review.role}</p>
