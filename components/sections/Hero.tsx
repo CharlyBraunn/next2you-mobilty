@@ -84,7 +84,7 @@ export function Hero() {
                             className="text-base bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white w-full sm:w-auto"
                             onClick={(e) => handleSmoothScroll(e, "comment-ca-marche")}
                         >
-                            Comment ça marche
+                            Découvrir le concept ✨
                         </Button>
                     </div>
                 </div>

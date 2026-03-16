@@ -122,15 +122,19 @@ export function Header() {
 
                 <div className="flex items-center gap-4">
                     <Button
-                        className={`hidden md:inline-flex rounded-full px-6 font-medium transition-colors ${isTop
-                            ? "bg-white text-[var(--color-primary)] hover:bg-gray-100"
-                            : "bg-[var(--color-primary)] text-white hover:bg-blue-700"
-                            }`}
-                        asChild
+                        className={cn(
+                            "hidden md:inline-flex rounded-full px-6 font-medium transition-colors",
+                            isTop
+                                ? "bg-white text-[var(--color-primary)] hover:bg-gray-100"
+                                : "bg-[var(--color-primary)] text-white hover:bg-blue-700"
+                        )}
+                        onClick={(e) => {
+                            const elem = document.getElementById("flotte")
+                            elem?.scrollIntoView({ behavior: "smooth" })
+                            window.history.pushState(null, "", "#flotte")
+                        }}
                     >
-                        <a href="https://fr.getaround.com/users/3551826" target="_blank" rel="noopener noreferrer">
-                            Voir les véhicules
-                        </a>
+                        Voir les véhicules
                     </Button>
                     <Button
                         variant="ghost"
