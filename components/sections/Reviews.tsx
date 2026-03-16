@@ -59,8 +59,11 @@ export function Reviews() {
                                         ))}
                                     </div>
                                     <p className="text-gray-600 italic">&quot;{review.content}&quot;</p>
-                                    <p className="mt-4 text-xs font-semibold text-[var(--color-primary)] bg-blue-50 inline-block px-2 py-1 rounded">
-                                        Loué : {review.vehicle}
+                                    <p className="mt-4 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+                                        Location : {review.date}
+                                    </p>
+                                    <p className="mt-1 text-xs font-semibold text-[var(--color-primary)] bg-blue-50 inline-block px-2 py-1 rounded">
+                                        Véhicule : {review.vehicle}
                                     </p>
                                 </div>
 
