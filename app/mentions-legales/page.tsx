@@ -26,9 +26,9 @@ export default function MentionsLegales() {
                     <section className="mb-10">
                         <h2 className="text-xl font-bold text-[var(--color-secondary)] mb-4">Hébergement</h2>
                         <div className="space-y-2 text-gray-600 leading-relaxed">
-                            <p>Le site est hébergé par [Nom de l&apos;hébergeur].</p>
-                            <p><strong>Téléphone :</strong> […]</p>
-                            <p><strong>Adresse électronique :</strong> […]</p>
+                            <p>Le site est hébergé par la société <strong>OVH SAS</strong>.</p>
+                            <p><strong>Siège social :</strong> 2 rue Kellermann - 59100 Roubaix - France</p>
+                            <p><strong>Site web :</strong> www.ovhcloud.com</p>
                         </div>
                     </section>
 
