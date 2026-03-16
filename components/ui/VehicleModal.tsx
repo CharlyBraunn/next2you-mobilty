@@ -86,7 +86,7 @@ export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+                        className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
                     >
                         {/* Close Button */}
                         <button
@@ -100,7 +100,7 @@ export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
                         </button>
 
                         {/* Slider Section */}
-                        <div className="md:w-1/2 relative bg-gray-100 min-h-[300px] md:min-h-0 group overflow-hidden">
+                        <div className="md:w-[60%] relative bg-gray-100 min-h-[300px] md:min-h-0 group overflow-hidden">
                             <div className="h-full w-full relative" ref={hasMultipleImages ? emblaRef : null}>
                                 <div className="flex h-full w-full">
                                     {images.map((imgSrc, index) => (
@@ -159,7 +159,7 @@ export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
                         </div>
 
                         {/* Details Section */}
-                        <div className="md:w-1/2 p-8 md:p-10 overflow-y-auto">
+                        <div className="md:w-[40%] p-8 md:p-10 overflow-y-auto">
                             <div className="mb-8">
                                 <h3 className="text-2xl font-bold text-[var(--color-secondary)] mb-2 font-heading">{vehicle.name}</h3>
                                 <div className="flex items-center gap-1.5 text-gray-500">
