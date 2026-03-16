@@ -76,7 +76,7 @@ export function Hero() {
                             className="rounded-full bg-white text-[var(--color-primary)] hover:bg-gray-100"
                             onClick={(e) => handleSmoothScroll(e, "flotte")}
                         >
-                            Voir les véhicules <ArrowRight className="ml-2 h-4 w-4" />
+                            Découvrir la flotte <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                         <Button
                             variant="outline"
@@ -84,7 +84,7 @@ export function Hero() {
                             className="text-base bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white w-full sm:w-auto"
                             onClick={(e) => handleSmoothScroll(e, "comment-ca-marche")}
                         >
-                            Découvrir le concept ✨
+                            Comment ça marche
                         </Button>
                     </div>
                 </div>
