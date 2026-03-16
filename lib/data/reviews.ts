@@ -14,7 +14,7 @@ export const reviews: Review[] = [
         content: "Véhicule conforme à la description. Le parking est vraiment pratique, surtout à Bois-Colombes. Le propriétaire est très réactif et disponible.",
         rating: 5,
         vehicle: "Renault Trafic",
-        date: "Mars 2025",
+        date: "Mars 2026",
     },
     {
         name: "Sophie R.",
@@ -22,7 +22,7 @@ export const reviews: Review[] = [
         content: "Propriétaire disponible et sympathique qui a su trouver une solution en direct concernant un problème lié au parking. Je recommande vivement !",
         rating: 5,
         vehicle: "Renault Trafic",
-        date: "Mars 2025",
+        date: "Mars 2026",
     },
     {
         name: "Julie B.",
@@ -30,7 +30,7 @@ export const reviews: Review[] = [
         content: "Tout s'est très bien passé ! La voiture est facile à prendre en main et très propre. Idéal pour circuler en ville sans stress.",
         rating: 5,
         vehicle: "Nissan Micra",
-        date: "Février 2025",
+        date: "Février 2026",
     },
     {
         name: "Nicolas P.",
@@ -38,7 +38,7 @@ export const reviews: Review[] = [
         content: "Véhicule très bien entretenu. Le kit de nettoyage et le support téléphone sont des petits plus très appréciables. Expérience parfaite.",
         rating: 5,
         vehicle: "Renault Twingo III",
-        date: "Février 2025",
+        date: "Février 2026",
     },
     {
         name: "Thomas L.",
@@ -46,7 +46,7 @@ export const reviews: Review[] = [
         content: "Kangoo très pratique. Le diable et les tendeurs fournis ont sauvé mon après-midi ! Communication au top avec Next2You.",
         rating: 5,
         vehicle: "Renault Kangoo Express",
-        date: "Janvier 2025",
+        date: "Février 2026",
     },
     {
         name: "Inès M.",
@@ -54,7 +54,7 @@ export const reviews: Review[] = [
         content: "Service impeccable. La place de parking réservée est un vrai luxe en région parisienne. Je relouerai sans hésiter.",
         rating: 5,
         vehicle: "Renault Kangoo Express",
-        date: "Janvier 2025",
+        date: "Janvier 2026",
     },
     {
         name: "Antoine G.",
@@ -62,7 +62,7 @@ export const reviews: Review[] = [
         content: "Ras merci pour la location. Tout s'est passé facilement. Un petit plus : le diable et la couverture dans le véhicule qui nous ont bien aidés.",
         rating: 5,
         vehicle: "Renault Kangoo Express",
-        date: "Décembre 2024",
+        date: "Janvier 2026",
     },
     {
         name: "Claire D.",
@@ -70,7 +70,7 @@ export const reviews: Review[] = [
         content: "Très bien - propriétaire disponible et réactif. A recommander. La camionnette fonctionne bien, que ce soit sur routes droites que sur routes sinueuses.",
         rating: 5,
         vehicle: "Renault Kangoo Express",
-        date: "Décembre 2024",
+        date: "Décembre 2025",
     },
     {
         name: "Kevin M.",
@@ -78,7 +78,7 @@ export const reviews: Review[] = [
         content: "La voiture fonctionne très bien. Le lieu de récupération est pratique. Elle est très propre. Le support de téléphone est pratique.",
         rating: 5,
         vehicle: "Renault Kangoo Express",
-        date: "Novembre 2024",
+        date: "Décembre 2025",
     },
     {
         name: "Marie-Laure H.",
@@ -86,7 +86,7 @@ export const reviews: Review[] = [
         content: "Tout s'est bien passé maintenant que je connais mieux la voiture ! Très maniable et agréable à conduire.",
         rating: 5,
         vehicle: "Nissan Micra",
-        date: "Novembre 2024",
+        date: "Novembre 2025",
     },
     {
         name: "David S.",
@@ -94,7 +94,7 @@ export const reviews: Review[] = [
         content: "Véhicule propre et conforme. Propriétaire ponctuel et arrangeant pour le retour. Rien à redire !",
         rating: 5,
         vehicle: "Renault Trafic",
-        date: "Octobre 2024",
+        date: "Novembre 2025",
     },
     {
         name: "Amélie V.",
@@ -102,6 +102,6 @@ export const reviews: Review[] = [
         content: "Super expérience pour mon premier déménagement seule. Le petit Kangoo se gare partout et loge énormément de choses.",
         rating: 5,
         vehicle: "Renault Kangoo Express",
-        date: "Octobre 2024",
+        date: "Octobre 2025",
     },
 ];
