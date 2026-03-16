@@ -100,7 +100,7 @@ export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
                         </button>
 
                         {/* Slider Section */}
-                        <div className="md:w-[60%] relative bg-gray-100 min-h-[300px] md:min-h-0 group overflow-hidden">
+                        <div className="md:w-[60%] relative bg-gray-900 aspect-[4/3] md:aspect-auto group overflow-hidden">
                             <div className="h-full w-full relative" ref={hasMultipleImages ? emblaRef : null}>
                                 <div className="flex h-full w-full">
                                     {images.map((imgSrc, index) => (
@@ -109,7 +109,7 @@ export function VehicleModal({ vehicle, isOpen, onClose }: VehicleModalProps) {
                                                 src={imgSrc}
                                                 alt={`${vehicle.name} - Vue ${index + 1}`}
                                                 fill
-                                                className="object-cover"
+                                                className="object-contain md:object-cover"
                                             />
                                         </div>
                                     ))}
