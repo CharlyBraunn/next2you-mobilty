@@ -30,7 +30,6 @@ export function Fleet() {
         const checkMobile = () => {
             const mobile = window.innerWidth < 768
             setIsMobile(mobile)
-            setVisibleCount(mobile ? 3 : ITEMS_PER_PAGE)
         }
         
         checkMobile()
