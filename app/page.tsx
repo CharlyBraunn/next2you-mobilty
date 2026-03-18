@@ -3,6 +3,7 @@ import { Advantages } from "@/components/sections/Advantages"
 import { Steps } from "@/components/sections/Steps"
 import { Fleet } from "@/components/sections/Fleet"
 import { Reviews } from "@/components/sections/Reviews"
+import { FAQ } from "@/components/sections/FAQ"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Fleet />
       <Steps />
       <Reviews />
+      <FAQ />
     </div>
   )
 }
