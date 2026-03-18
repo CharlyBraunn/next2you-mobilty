@@ -118,6 +118,16 @@ export function Header() {
                     >
                         Avis
                     </Link>
+                    <Link
+                        href="#faq"
+                        onClick={(e) => handleSmoothScroll(e, "#faq")}
+                        className={cn(
+                            "transition-colors",
+                            isTop ? "text-gray-100 hover:text-white" : "text-gray-600 hover:text-[var(--color-primary)]"
+                        )}
+                    >
+                        FAQ
+                    </Link>
                 </nav>
 
                 <div className="flex items-center gap-4">
@@ -183,6 +193,13 @@ export function Header() {
                             className="text-gray-800 hover:text-[var(--color-primary)] transition-colors"
                         >
                             Avis
+                        </Link>
+                        <Link
+                            href="#faq"
+                            onClick={(e) => handleSmoothScroll(e, "#faq")}
+                            className="text-gray-800 hover:text-[var(--color-primary)] transition-colors"
+                        >
+                            FAQ
                         </Link>
                     </nav>
                 </div>
