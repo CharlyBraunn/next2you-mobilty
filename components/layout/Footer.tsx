@@ -28,6 +28,7 @@ export function Footer() {
                             <li><Link href="#flotte" className="hover:text-white">Véhicules</Link></li>
                             <li><Link href="#comment-ca-marche" className="hover:text-white">Comment ça marche</Link></li>
                             <li><Link href="#avis" className="hover:text-white">Avis clients</Link></li>
+                            <li><Link href="#faq" className="hover:text-white">FAQ</Link></li>
                         </ul>
                     </div>
 
