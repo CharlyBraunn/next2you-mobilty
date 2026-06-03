@@ -35,7 +35,7 @@ export function Reviews() {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-1">
-                                    <span className="font-bold text-[var(--color-secondary)]">4.9/5</span>
+                                    <span className="font-bold text-[var(--color-secondary)]">5/5</span>
                                     <span className="text-sm text-gray-500">sur 500+ avis</span>
                                 </div>
                             </div>

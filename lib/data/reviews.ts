@@ -9,6 +9,22 @@ export interface Review {
 
 export const reviews: Review[] = [
     {
+        name: "Léa T.",
+        role: "Utilitaire",
+        content: "Location parfaite d'un Kangoo pour mon emménagement. Tout est prévu : diable, sangles... c'est vraiment pro. Je recommande !",
+        rating: 5,
+        vehicle: "Renault Kangoo Express",
+        date: "Mai 2026",
+    },
+    {
+        name: "Guillaume M.",
+        role: "Trajet urbain",
+        content: "Super service pour une location de dernière minute à Bois-Colombes. La Nissan Micra était impeccable et la boîte auto un vrai bonheur en ville.",
+        rating: 5,
+        vehicle: "Nissan Micra",
+        date: "Avril 2026",
+    },
+    {
         name: "Marc A.",
         role: "Déménagement",
         content: "Véhicule conforme à la description. Le parking est vraiment pratique, surtout à Bois-Colombes. Le propriétaire est très réactif et disponible.",
