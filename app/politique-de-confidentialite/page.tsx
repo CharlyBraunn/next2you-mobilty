@@ -1,5 +1,13 @@
-import Link from "next/link"
-import { ChevronLeft } from "lucide-react"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Politique de Confidentialité",
+    description:
+        "Politique de confidentialité de Next2You Mobility : traitement des données personnelles, cookies et droits RGPD.",
+    robots: { index: false, follow: false },
+};
 
 export default function PolitiqueConfidentialite() {
     return (

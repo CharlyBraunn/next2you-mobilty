@@ -1,5 +1,13 @@
-import Link from "next/link"
-import { ChevronLeft } from "lucide-react"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Conditions Générales d'Utilisation",
+    description:
+        "Consultez les Conditions Générales d'Utilisation du site Next2You Mobility. Accès, propriété intellectuelle, données personnelles et responsabilités.",
+    robots: { index: false, follow: false },
+};
 
 export default function CGU() {
     return (

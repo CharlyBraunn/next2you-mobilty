@@ -1,5 +1,13 @@
-import Link from "next/link"
-import { ChevronLeft } from "lucide-react"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Mentions Légales",
+    description:
+        "Mentions légales du site Next2You Mobility : éditeur, hébergeur, propriété intellectuelle et responsabilités.",
+    robots: { index: false, follow: false },
+};
 
 export default function MentionsLegales() {
     return (
