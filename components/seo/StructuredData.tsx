@@ -1,7 +1,7 @@
 import { faqData } from "@/lib/data/faq";
 import { vehicles } from "@/lib/data/vehicles";
 
-const siteUrl = "https://www.next2you-mobility.fr";
+const siteUrl = "https://www.next2you-mobility.com";
 
 export function StructuredData() {
     const localBusiness = {

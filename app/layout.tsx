@@ -15,7 +15,7 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const siteUrl = "https://www.next2you-mobility.fr";
+const siteUrl = "https://www.next2you-mobility.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
