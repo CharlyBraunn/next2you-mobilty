@@ -11,6 +11,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1.0,
         },
         {
+            url: `${siteUrl}/location-utilitaire-bois-colombes`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteUrl}/location-utilitaire-clichy`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteUrl}/location-utilitaire-paris-18`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
             url: `${siteUrl}/cgu`,
             lastModified: new Date(),
             changeFrequency: "yearly",
