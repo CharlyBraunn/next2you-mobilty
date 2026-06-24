@@ -6,7 +6,7 @@ export function Footer() {
     return (
         <footer className="bg-[var(--color-secondary)] text-white py-12">
             <div className="container mx-auto px-4">
-                <div className="grid gap-8 md:grid-cols-4">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                     <div className="col-span-1 md:col-span-2">
                         <div className="relative h-8 w-32 mb-4">
                             <Image
@@ -29,6 +29,15 @@ export function Footer() {
                             <li><Link href="#comment-ca-marche" className="hover:text-white">Comment ça marche</Link></li>
                             <li><Link href="#avis" className="hover:text-white">Avis clients</Link></li>
                             <li><Link href="#faq" className="hover:text-white">FAQ</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 className="font-bold mb-4">Nos villes</h3>
+                        <ul className="space-y-2 text-sm text-gray-400">
+                            <li><Link href="/location-utilitaire-bois-colombes" className="hover:text-white">Bois-Colombes</Link></li>
+                            <li><Link href="/location-utilitaire-clichy" className="hover:text-white">Clichy</Link></li>
+                            <li><Link href="/location-utilitaire-paris-18" className="hover:text-white">Paris 18ème</Link></li>
                         </ul>
                     </div>
 

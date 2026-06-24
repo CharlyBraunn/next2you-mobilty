@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { LocalCityPage } from "@/components/local/LocalCityPage"
+import { LocalPageSEO } from "@/components/seo/LocalPageSEO"
 import type { CityConfig } from "@/components/local/LocalCityPage"
 
 const config: CityConfig = {
@@ -70,5 +71,10 @@ export const metadata: Metadata = {
 }
 
 export default function BoisColombesPage() {
-    return <LocalCityPage config={config} />
+    return (
+        <>
+            <LocalPageSEO config={config} />
+            <LocalCityPage config={config} />
+        </>
+    )
 }
