@@ -30,7 +30,7 @@ export function Advantages() {
                         </div>
                         <h2 className="text-3xl font-bold tracking-tighter text-[var(--color-secondary)] sm:text-4xl">
                             Pourquoi choisir <span className="relative inline-block text-[var(--color-primary)] cursor-pointer group">
-                                Next 2 You ?
+                                NEXT2YOU Mobility ?
                                 <span className="absolute bottom-0 left-0 h-[3px] w-full bg-[var(--color-primary)] transition-transform duration-500 ease-out origin-left scale-x-100 group-hover:origin-right group-hover:scale-x-0"></span>
                             </span>
                         </h2>
