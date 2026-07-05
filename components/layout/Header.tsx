@@ -66,10 +66,10 @@ export function Header() {
                 isTop && !isMobileMenuOpen ? "bg-white/10" : "bg-white/80 border-gray-200/50"
             )}>
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="relative h-12 w-48">
+                    <div className="relative h-10 w-56">
                         <Image
                             src={isTop && !isMobileMenuOpen ? "/images/logo-white.png" : "/images/logo-blue.png"}
-                            alt="Next 2 You"
+                            alt="Next2You Mobility"
                             fill
                             className="object-contain object-left"
                             priority

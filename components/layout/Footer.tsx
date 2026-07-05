@@ -8,10 +8,10 @@ export function Footer() {
             <div className="container mx-auto px-4">
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                     <div className="col-span-1 md:col-span-2">
-                        <div className="relative h-8 w-32 mb-4">
+                        <div className="relative h-8 w-48 mb-4">
                             <Image
                                 src="/images/logo-white.png"
-                                alt="Next 2 You"
+                                alt="Next2You Mobility"
                                 fill
                                 className="object-contain object-left"
                             />
