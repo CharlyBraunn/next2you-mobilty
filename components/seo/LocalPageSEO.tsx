@@ -29,16 +29,17 @@ export function LocalPageSEO({ config }: LocalPageSEOProps) {
     const localBusiness = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": `${siteUrl}/location-utilitaire-${config.slug}/#business`,
         name: `Next2You Mobility — ${config.cityLabel}`,
         description: config.description,
         url: `${siteUrl}/location-utilitaire-${config.slug}`,
         image: `${siteUrl}/images/og-image.jpg`,
-        telephone: "",
         priceRange: "€€",
         openingHours: "Mo-Su 00:00-24:00",
         address: {
             "@type": "PostalAddress",
             addressLocality: config.city,
+            addressRegion: config.postalCode.startsWith("75") ? "Île-de-France" : "Hauts-de-Seine",
             postalCode: config.postalCode,
             addressCountry: "FR",
         },
@@ -52,10 +53,16 @@ export function LocalPageSEO({ config }: LocalPageSEOProps) {
             ratingValue: "5",
             bestRating: "5",
             ratingCount: "548",
+            reviewCount: "548",
         },
         areaServed: {
             "@type": "City",
             name: config.city,
+        },
+        parentOrganization: {
+            "@type": "Organization",
+            "@id": `${siteUrl}/#business`,
+            name: "Next2You Mobility",
         },
         hasMap: `https://www.google.com/maps/search/Next2You+Mobility+${encodeURIComponent(config.city)}`,
     }

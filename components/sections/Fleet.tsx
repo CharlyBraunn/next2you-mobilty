@@ -70,10 +70,10 @@ export function Fleet() {
                             Véhicules
                         </div>
                         <h2 className="text-3xl font-bold tracking-tighter text-[var(--color-secondary)] sm:text-4xl font-heading">
-                            Notre Flotte
+                            Notre flotte en Île-de-France
                         </h2>
                         <p className="mt-4 text-gray-600">
-                            Des véhicules régulièrement entretenus, pour tous vos besoins.
+                            Utilitaires et citadines, régulièrement entretenus, pour tous vos besoins.
                         </p>
                     </div>
 
@@ -128,7 +128,7 @@ export function Fleet() {
                                     <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                                         <Image
                                             src={vehicle.image}
-                                            alt={vehicle.name}
+                                            alt={`${vehicle.name} à ${vehicle.location} — location NEXT2YOU Mobility`}
                                             fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -189,7 +189,7 @@ export function Fleet() {
                                                 <a
                                                     href={vehicle.link}
                                                     target="_blank"
-                                                    rel="noopener noreferrer"
+                                                    rel="noopener noreferrer nofollow"
                                                     onClick={(e) => e.stopPropagation()}
                                                 >
                                                     Réserver <ArrowRight className="h-4 w-4" />

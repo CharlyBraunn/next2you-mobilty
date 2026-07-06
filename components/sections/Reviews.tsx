@@ -42,7 +42,7 @@ export function Reviews() {
                         </div>
 
                         <h2 className="text-3xl font-bold tracking-tighter text-[var(--color-secondary)] sm:text-4xl">
-                            Ils nous font confiance
+                            Ce que disent nos locataires
                         </h2>
                     </div>
 
