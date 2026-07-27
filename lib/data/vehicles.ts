@@ -129,7 +129,7 @@ export const vehicles: Vehicle[] = [
         description: "Grand fourgon 11m³ idéal pour déménagements et transports volumineux. Moteur 2.3 DCI 125cv, fiable et puissant. Boule d'attelage incluse.",
         details: "Grand fourgon de 11m³ idéal pour déménagements et transports volumineux. Moteur 2,3 DCI 125cv robuste et économe (réservoir 105L → ~1000km sans faire le plein). 3 places à l'avant. Crochet d'attelage pour remorque.\n\nEmplacement ultra-pratique : centre-ville de Bois-Colombes, à deux pas de la gare (ligne J). À 15min de Paris, proche de l'A86.\n\nFournis gratuitement : diable, sangles/tendeurs, support téléphone, câble de chargement.\n\n⚠️ Gabarit : 6,2m de long × 2,1m de large × 2,5m de haut — vigilance dans les rues étroites et parkings couverts. Radar de recul désactivé (attelage arrière) : faites-vous guider lors des manœuvres.\n\n🏎️ Bridé à 130km/h pour votre sécurité.",
         features: ["Boule d'attelage", "Caméra de recul", "Climatisation", "Régulateur"],
-        link: "https://fr.getaround.com/location-voiture/bois-colombes",
+        link: "https://fr.getaround.com/location-voiture/bois-colombes/renault-master-1931715",
         category: "utilitaire",
     },
 ];
