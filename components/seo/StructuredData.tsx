@@ -40,8 +40,8 @@ export function StructuredData() {
             "@type": "AggregateRating",
             ratingValue: "5",
             bestRating: "5",
-            ratingCount: "548",
-            reviewCount: "548",
+            ratingCount: "622",
+            reviewCount: "622",
         },
         sameAs: [
             "https://fr.getaround.com/users/3551826",
