@@ -29,6 +29,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${siteUrl}/location-utilitaire-colombes`,
+            lastModified: new Date("2026-09-03"),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteUrl}/location-utilitaire-neuilly-sur-seine`,
+            lastModified: new Date("2026-09-03"),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteUrl}/location-utilitaire-la-garenne-colombes`,
+            lastModified: new Date("2026-09-03"),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
             url: `${siteUrl}/cgu`,
             lastModified: new Date("2026-01-01"),
             changeFrequency: "yearly",

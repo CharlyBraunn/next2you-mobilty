@@ -38,9 +38,9 @@ export function Footer() {
                             <li><Link href="/location-utilitaire-bois-colombes" className="hover:text-white">Bois-Colombes</Link></li>
                             <li><Link href="/location-utilitaire-clichy" className="hover:text-white">Clichy</Link></li>
                             <li><Link href="/location-utilitaire-paris-18" className="hover:text-white">Paris 18ème</Link></li>
-                            <li><span className="text-gray-600">Colombes</span></li>
-                            <li><span className="text-gray-600">Neuilly-sur-Seine</span></li>
-                            <li><span className="text-gray-600">La Garenne-Colombes</span></li>
+                            <li><Link href="/location-utilitaire-colombes" className="hover:text-white">Colombes</Link></li>
+                            <li><Link href="/location-utilitaire-neuilly-sur-seine" className="hover:text-white">Neuilly-sur-Seine</Link></li>
+                            <li><Link href="/location-utilitaire-la-garenne-colombes" className="hover:text-white">La Garenne-Colombes</Link></li>
                         </ul>
                     </div>
 
